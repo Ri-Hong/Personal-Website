@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital@0;1&display=swap');
+* {
+  font-family: 'Quantico', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.chip {
+  position:absolute;
+  height: 20%;
+  width: 30%;
+  background: black;
+  border-radius: 10px;
+  z-index: 9;
+  animation: border 2s ease 3s forwards;
+}
+@keyframes border{
+  100% {
+    box-shadow: 0 0 10px 10px #00ffff; 
+  }
+}
+
+
+
+#logo {
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  stroke-linecap: round;
+  z-index: 11;
+}
+
+#logo path:nth-child(1) {
+  stroke-dasharray: 565;
+  stroke-dashoffset: 565;
+  animation: line-animation 2s ease forwards;
+}
+
+#logo path:nth-child(2) {
+  stroke-dasharray: 233;
+  stroke-dashoffset: 233;
+  animation: line-animation 2s ease forwards 0.3s;
+}
+
+#logo path:nth-child(3) {
+  stroke-dasharray: 532;
+  stroke-dashoffset: 532;
+  animation: line-animation 2s ease forwards 0.6s;
+}
+
+#logo path:nth-child(4) {
+  stroke-dasharray: 404;
+  stroke-dashoffset: 404;
+  animation: line-animation 2s ease forwards 0.9s;
+}
+
+#logo path:nth-child(5) {
+  stroke-dasharray: 390;
+  stroke-dashoffset: 390;
+  animation: line-animation 2s ease forwards 1.2s;
+}
+
+#logo path:nth-child(6) {
+  stroke-dasharray: 637;
+  stroke-dashoffset: 637;
+  animation: line-animation 2s ease forwards 1.5s;
+}
+
+@keyframes line-animation {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* .name:before {
+  content: 'Ri\00a0Hong';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  -webkit-text-stroke: 0.3vw #00ffff;
+  overflow: hidden;
+  animation: renderText 3s linear 1;
+} 
+
+ @keyframes renderText{
+ 0% {
+   width: 0;
+ }
+ 100% {
+  width: 100%;
+ }
+} */
+
+
+#shadow:after {
+  position: absolute;
+  font-size: 142px;
+  content: 'Ri\00a0Hong';
+  height: 200px;
+  transform: translate(-50%, -56%);
+  overflow: hidden;
+  animation: breathe 3s linear 3s alternate infinite;
+  z-index:10;
+}
+
+@keyframes breathe{
+  0% {
+    -webkit-text-stroke: 0.3vw #00ffff;
+    filter: drop-shadow(0 0 0 #00ffff);
+  }
+  100% {
+    filter: drop-shadow(0 0 15px #00ffff);
+  }
+}
+
+.background {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #00ffff;
+  animation: expand 3s linear forwards 3s alternate 1;
+}
+
+@keyframes expand {
+  0% {
+    width: 200px;
+    height: 200px;
+  }
+  100% {
+    background: #2e369e;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+.circuit {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
