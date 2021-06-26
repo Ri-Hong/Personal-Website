@@ -6,14 +6,18 @@
   margin: 0;
 }
 
-body {
+section {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.home {
+  width: 100%;
+  height: 100vh;
+  background: #000;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .chip {
@@ -31,8 +35,6 @@ body {
   }
 }
 
-
-
 #logo {
   height: 200px;
   position: absolute;
@@ -44,38 +46,38 @@ body {
 }
 
 #logo path:nth-child(1) {
-  stroke-dasharray: 565;
-  stroke-dashoffset: 565;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
   animation: line-animation 2s ease forwards;
 }
 
 #logo path:nth-child(2) {
-  stroke-dasharray: 233;
-  stroke-dashoffset: 233;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
   animation: line-animation 2s ease forwards 0.3s;
 }
 
 #logo path:nth-child(3) {
-  stroke-dasharray: 532;
-  stroke-dashoffset: 532;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
   animation: line-animation 2s ease forwards 0.6s;
 }
 
 #logo path:nth-child(4) {
-  stroke-dasharray: 404;
-  stroke-dashoffset: 404;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
   animation: line-animation 2s ease forwards 0.9s;
 }
 
 #logo path:nth-child(5) {
-  stroke-dasharray: 390;
-  stroke-dashoffset: 390;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
   animation: line-animation 2s ease forwards 1.2s;
 }
 
 #logo path:nth-child(6) {
-  stroke-dasharray: 637;
-  stroke-dashoffset: 637;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
   animation: line-animation 2s ease forwards 1.5s;
 }
 
@@ -85,36 +87,13 @@ body {
   }
 }
 
-/* .name:before {
-  content: 'Ri\00a0Hong';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  -webkit-text-stroke: 0.3vw #00ffff;
-  overflow: hidden;
-  animation: renderText 3s linear 1;
-} 
-
- @keyframes renderText{
- 0% {
-   width: 0;
- }
- 100% {
-  width: 100%;
- }
-} */
-
-
 #shadow:after {
   position: absolute;
-  font-size: 142px;
+  font-size: 212px;
   content: 'Ri\00a0Hong';
-  height: 200px;
   transform: translate(-50%, -56%);
-  overflow: hidden;
   animation: breathe 3s linear 3s alternate infinite;
-  z-index:10;
+  z-index: 10;
 }
 
 @keyframes breathe{
@@ -127,31 +106,67 @@ body {
   }
 }
 
-.background {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #00ffff;
-  animation: expand 3s linear forwards 3s alternate 1;
+li, a {
+  font-size: 20px;
+  color: #edf0f1;
+  text-decoration: none;
 }
 
-@keyframes expand {
+nav {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 65%;
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+  transform: translate(-50%, -50%);
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.nav-links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+  color: #0088a9;
+}
+
+.nav-links li:nth-child(1) {
+  opacity: 0;
+  animation: drop-in 1s linear forwards 3s;
+}
+
+.nav-links li:nth-child(2) {
+  opacity: 0;
+  animation: drop-in 1s linear forwards 3.5s;
+}
+
+.nav-links li:nth-child(3) {
+  opacity: 0;
+  animation: drop-in 1s linear forwards 4s;
+}
+
+@keyframes drop-in {
   0% {
-    width: 200px;
-    height: 200px;
+    transform: translateY(-200%);
+  }
+  30%{
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40%);
+    opacity: 0.4;
   }
   100% {
-    background: #2e369e;
-    width: 100%;
-    height: 100vh;
+    transform: translateY(0);
+    opacity: 1;
   }
-}
-
-.circuit {
-  position: absolute;
-  width: 100%;
-  z-index: 1;
 }
