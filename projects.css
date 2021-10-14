@@ -19,7 +19,7 @@ nav {
   z-index: 20;
   align-items: center;
   animation: drop-in 1s ease forwards 2.5s;
-  top: -100%;
+  top: -10%;
 }
 
 @keyframes drop-in {
@@ -31,16 +31,13 @@ nav {
   }
 }
 
-.navbar-filler {
-  height: 5vh;
-}
 
 .logo {
   color: #fff;
   font-size: 30px;
-  padding: 0 20px;
-  position: absolute;
-  text-decoration: none
+  padding: 0px 20px;
+  white-space: nowrap;
+  text-decoration: none;
 }
 
 .nav-links {
@@ -48,7 +45,7 @@ nav {
   justify-content: space-around;
   height: 3vh;
   width: 500px;
-  margin: 1vh auto;
+  margin: 0 auto;
   padding: 0;
   left: 0;
   right: 0;
@@ -76,7 +73,7 @@ li, #nav-a {
 }
 
 .content-container {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -292,16 +289,12 @@ li, #nav-a {
 }
 
 .section-two {
-  height: 100vh;
   background-color: rgb(131, 131, 131);
   color: #000;
-  padding: 30px;
 }
 
 .section-three {
-  height: 100vh;
   background-color: rgb(73, 73, 73);
-  padding: 30px;
   color: rgb(235, 235, 235);
 }
 
@@ -335,7 +328,7 @@ li, #nav-a {
 }
 
 .icons {
-  margin: 20px 0;
+  margin: 10px 0 0 0;
 }
 
 a {
