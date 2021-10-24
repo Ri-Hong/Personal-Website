@@ -37,6 +37,7 @@ section {
 
 #logo {
   height: 200px;
+  width: 80%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -87,16 +88,18 @@ section {
   }
 }
 
-#shadow:after {
+
+/* #shadow:after {
+  width: 80%;
   position: absolute;
   font-size: 212px;
   content: 'Ri\00a0Hong';
   transform: translate(-50%, -56%);
   animation: breathe 3s linear 3s alternate infinite;
   z-index: 10;
-}
+} */
 
-@keyframes breathe{
+/* @keyframes breathe{
   0% {
     -webkit-text-stroke: 0.3vw #00ffff;
     filter: drop-shadow(0 0 0 #00ffff);
@@ -104,7 +107,7 @@ section {
   100% {
     filter: drop-shadow(0 0 15px #00ffff);
   }
-}
+} */
 
 li, a {
   font-size: 20px;
@@ -114,21 +117,24 @@ li, a {
 
 nav {
   position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   top: 65%;
   left: 50%; /* position the left edge of the element at the middle of the parent */
   transform: translate(-50%, -50%);
+  width: 600px;
 }
 
 .nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   list-style: none;
+  width: 100%;
 }
 
 .nav-links li {
-  display: inline-block;
-  padding: 0 20px;
+  text-align: center;
+  margin: 30px 0;
 }
 
 .nav-links li a {
@@ -154,6 +160,11 @@ nav {
   animation: drop-in 1s linear forwards 4s;
 }
 
+.nav-links li:nth-child(4) {
+  opacity: 0;
+  animation: drop-in 1s linear forwards 4.5s;
+}
+
 @keyframes drop-in {
   0% {
     transform: translateY(-200%);
@@ -168,5 +179,15 @@ nav {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@media screen and (max-width:760px){
+  .nav-links {
+    flex-direction: column;
+  }
+
+  #logo {
+    top: 30%;
   }
 }
