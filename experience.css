@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Quantico:ital@0;1&display=swap");
+* {
+  font-family: "Quantico", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 0 10%;
+  margin: 0;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 6vh;
+  animation: drop-in 0s ease forwards 0s; /*  animation: drop-in 1s ease forwards 2.5s; */
+}
+
+@keyframes drop-in {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.logo {
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-decoration: none;
+  flex-basis: 220px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  list-style: none;
+  flex-basis: 800px;
+}
+
+#nav-a {
+  color: #00ffff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+#nav-a:hover {
+  color: #fff;
+}
+
+.burger{
+  display: none;
+}
+
+.burger div{
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+  transition: all 0.3s ease-in;
+}
+
+@media screen and (max-width:760px){
+  nav {
+    justify-content: space-between;
+  }
+
+  body{
+    overflow-x: hidden;
+  }
+
+  .nav-links{
+    position: absolute;
+    right: 0px;
+    height: 94vh;
+    top: 6vh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    /* transition: transform 0.5s ease-in; */
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger{
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.nav-active{
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes navLinkFadeOut{
+  from{
+    /* opacity: 1; */
+    transform: translateX(0px);
+  }
+  to{
+    /* opacity: 0; */
+    transform: translateX(50px);
+  }
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2{
+  opacity: 0;
+}
+
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.top-section {
+  width: 100%;
+  height: 94vh;
+  margin-top: 6vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width:760px){
+  .top-section {
+    height: auto;
+  }
+}
+
+#experience-heading {
+  height: 70px;
+  stroke-linecap: round;
+  margin: 10% 0 5% 0;
+  width: 55%;
+  align-items: left;
+  text-align: left;
+  left: 0;
+}
+
+@media only screen and (min-width: 760px) {
+  #experience-heading {
+    height: 100px;
+    stroke-linecap: round;
+  }
+}
+
+#experience-heading path:nth-child(1) {
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  animation: line-animation 1s ease forwards;
+}
+
+#experience-heading path:nth-child(2) {
+  stroke-dasharray: 362;
+  stroke-dashoffset: 362;
+  animation: line-animation 1s ease forwards 0.3s;
+}
+
+#experience-heading path:nth-child(3) {
+  stroke-dasharray: 493;
+  stroke-dashoffset: 493;
+  animation: line-animation 1s ease forwards 0.6s;
+}
+
+#experience-heading path:nth-child(4) {
+  stroke-dasharray: 415;
+  stroke-dashoffset: 415;
+  animation: line-animation 1s ease forwards 0.9s;
+}
+
+#experience-heading path:nth-child(5) {
+  stroke-dasharray: 230;
+  stroke-dashoffset: 230;
+  animation: line-animation 1s ease forwards 1.2s;
+}
+
+#experience-heading path:nth-child(6) {
+  stroke-dasharray: 234;
+  stroke-dashoffset: 234;
+  animation: line-animation 1s ease forwards 1.5s;
+}
+
+#experience-heading path:nth-child(7) {
+  stroke-dasharray: 415;
+  stroke-dashoffset: 415;
+  animation: line-animation 1s ease forwards 1.8s;
+}
+
+#experience-heading path:nth-child(8) {
+  stroke-dasharray: 387;
+  stroke-dashoffset: 387;
+  animation: line-animation 1s ease forwards 2.1s;
+}
+
+#experience-heading path:nth-child(9) {
+  stroke-dasharray: 318;
+  stroke-dashoffset: 318;
+  animation: line-animation 1s ease forwards 2.4s;
+}
+
+#experience-heading path:nth-child(10) {
+  stroke-dasharray: 415;
+  stroke-dashoffset: 415;
+  animation: line-animation 1s ease forwards 2.7s;
+}
+
+@keyframes line-animation {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.content-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.flexbox-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 760px) {
+  .flexbox-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.left-portion {
+  height: 550px;
+  flex-basis: 60%;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+.right-portion {
+  height: 550px;
+  flex-basis: 40%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.heading-description {
+  line-height: 40px;
+  font-size: 25px;
+  color: #fff;
+  width: 100%;
+  transform: translateX(-150%);
+  animation: fade-in 1.75s ease forwards 2.5s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    transform: translateZ(-1px);
+  }
+}
+
+.section-header {
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+}
+
+.experience {
+  flex-direction: column;
+  margin: 10px 50px 40px 50px;
+}
+
+img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 760px) {
+  .experience {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .experience:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  img {
+    width: 70%;
+  }
+}
+
+.description-portion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 50%;
+  margin-bottom: 20px;
+}
+
+.picture-portion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50%;
+}
+
+.experience-title {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 50px;
+  margin-bottom: 10px;
+}
+
+.experience-subheading {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+
+.experience-description {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 300;
+}
